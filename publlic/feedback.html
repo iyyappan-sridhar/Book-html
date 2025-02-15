@@ -1,0 +1,89 @@
+<doctype html>
+  <html lang="en">
+      <head></head>
+      <title class="Metrix">Mom carness</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width = device-width,initial-scale=1.0">
+      <link rel="stylesheet" href="book.css">
+      <link rel="stylesheet" href="review.css">
+      <body>
+          <header>
+            <div>
+              <img class="doctor" src="../asst/dee-removebg-preview.png" alt="doctor"></image>
+            </div>
+              <div class="logo-container">
+                <img src="../asst/mc.png" alt="Logo" class="logo"> 
+              </div>
+              <nav class="nav-menu">
+               
+                <li><a href="home.html">Home</a></li>
+                <li><a href="feedback.html">Review</a></li>
+                <li><a href="about.html">about us</a></li>
+              </nav>
+            </header>
+            <div class="backgroung"></div>
+            <section class="review-section">
+              <div class="glass-card">
+                <h4>leave a review </h4>
+                <p class="subtitle"> your feedback helps us grow. share your experinence</p>
+                
+                <form class="review-form">
+                  <!-- input of name -->
+                   <div class="form-group">
+                    <label for="name">
+                      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </label>
+                   </div>
+                   <!-- star rating -->
+                    <div class="form-group">
+                      <label> Your rating : </label>
+                      <div class="star-rating">
+                        <span class="star" data-value="1">⭐️</span>
+                        <span class="star" data-value="2">⭐️</span>
+                        <span class="star" data-value="3">⭐️</span>
+                        <span class="star" data-value="4">⭐️</span>
+                        <span class="star" data-value="5">⭐️</span>
+                      </div>
+                      <input type="hidden" id="rating" name="rating" required>
+
+                    </div>
+
+                    <!-- review comment section-->
+                     <div class="form-group">
+                      <label for="comment">your review :</label>
+                      <textarea id="comment" name="comment" rows="5"  placeholder="write your review here...." required ></textarea>
+
+                     </div>
+                     <button class="submit">Submit Review</button>
+                </form>
+              </div>
+            </section>
+  <script>
+              
+    // JavaScript for Star Rating
+    const stars = document.querySelectorAll('.star');
+    const ratingInput = document.getElementById('rating');
+
+    stars.forEach(star => {
+      star.addEventListener('click', () => {
+        const value = star.getAttribute('data-value');
+        ratingInput.value = value;
+        stars.forEach(s => s.classList.remove('active'));
+        star.classList.add('active');
+        for (let i = 0; i < value; i++) {
+          stars[i].classList.add('active');
+        }
+      });
+    });
+  </script>
+
+            
+           
+
+            
+
+            
+          
+        
+      </body>
+  </html>
